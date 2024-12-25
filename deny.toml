@@ -116,6 +116,14 @@ exceptions = [
 # Some crates don't have (easily) machine readable licensing information,
 # adding a clarification entry for it allows you to manually specify the
 # licensing information
+[[licenses.clarify]]
+name = "ring"
+# version = "0.17.8"
+expression = "ISC AND MIT"
+license-files = [
+{ path = "/home/vincent/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ring-0.17.8/LICENSE", hash = 0xbd0eed23 },
+#{ path = "licenses/thirdparty/ring/LICENSE", hash = "0xbd0eed23" }
+]
 #[[licenses.clarify]]
 # The package spec the clarification applies to
 #crate = "ring"
