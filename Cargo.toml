@@ -1,26 +1,9 @@
-[package]
-name = "chat"
-version = "0.1.0"
-edition = "2021"
-license = "MIT"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[[licenses.clarify]]
-name = "ring"
-# SPDX considers OpenSSL to encompass both the OpenSSL and SSLeay licenses
-# https://spdx.org/licenses/OpenSSL.html
-# ISC - Both BoringSSL and ring use this for their new files
-# MIT - "Files in third_party/ have their own licenses, as described therein. The MIT
-# license, for third_party/fiat, which, unlike other third_party directories, is
-# compiled into non-test libraries, is included below."
-# OpenSSL - Obviously
-expression = "ISC AND MIT AND OpenSSL"
-license-files = [{ path = "LICENSE", hash = 0xbd0eed23 }]
-
-[dependencies]
+[workspace]
+members = ["chat_server", "notify_server"]
+resolver = "2"
+[workspace.dependencies]
 anyhow = "1.0.95"
-axum = { version = "0.7.9", features = ["http2", "query", "tracing", "multipart"] }
+axum = { version = "0.7.9", features = ["http2", "query", "tracing", "multipart",] }
 serde = { version = "1.0.216", features = ["derive"] }
 serde_yml = "0.0.12"
 sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio-rustls"] }
