@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS users (
   id bigserial PRIMARY KEY,
   fullname varchar(64) NOT NULL,
   email varchar(64) NOT NULL,
-  password varchar(64) NOT NULL,
-  create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+  password_hash varchar(97) NOT NULL,
+  created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS email_index ON users(email);

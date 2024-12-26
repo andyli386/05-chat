@@ -4,10 +4,13 @@ use axum::{
 };
 use config::AppConfig;
 use handlers::*;
+use models::*;
 use std::{ops::Deref, sync::Arc};
 
 pub mod config;
+mod error;
 mod handlers;
+mod models;
 
 #[derive(Debug, Clone)]
 pub(crate) struct AppState {
